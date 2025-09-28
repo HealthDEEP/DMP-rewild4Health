@@ -1,5 +1,14 @@
-# Welcome to GitHub Desktop!
+# Data Management Plan rewild4Health
 
-This is your README. READMEs are where you can communicate what your project is and how to use it.
+Rewilding following reforestation could reduce zoonotic risk.
+The project rewild4Health takes place in northern Thailand characterized by a community reforestation policy.
 
-Write your name on line 6, save it, and then head back to GitHub Desktop.
+Serge Morand
+Data Management Plan (DMP) of rewild4Health (Rewilding and reforestation-based solution for reducing zoonotic risk using a One Health approach.
+Funded by French National Research Agency
+https://anr.fr/Project-ANR-24-CE35-5476
+to IRL2021 HealthDEEP CNRS
+https://www.healthdeep.org/
+
+
+
