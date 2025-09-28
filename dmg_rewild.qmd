@@ -1,0 +1,407 @@
+---
+title: "Data Management Plan rewild4Health"
+author: "Serge Morand"
+
+# date: last-modified
+date: today
+date-format: DD MMMM, YYYY
+
+editor: visual
+bibliography: bibliography1.bib
+link-citations: true
+css: styles.css
+toc: true
+number-sections: true
+
+fig-cap-location: bottom
+
+highlight-style: pygments
+
+format:
+  html: 
+    code-fold: true
+    html-math-method: katex
+
+#  pdf: default
+#  docx: default
+---
+
+```{r pack, echo=FALSE}
+library(kableExtra)
+library(gt)
+```
+
+# Project Description
+
+**Title**: rewild4Health
+
+**Full title**: Rewilding and reforestation-based solution for reducing zoonotic risk using a One Health approach
+
+**Funder**: French National Research Agency (<a href="https://anr.fr/en/"target="_blank">ANR</a>)
+
+**To**: <a href="https://sites.google.com/view/healthdeep" target="_blank">IRL2021 HealthDEEP CNRS</a>
+
+## Rational
+
+Rewilding following reforestation could reduce zoonotic risk. The project rewild4Health takes place in northern Thailand characterized by a community reforestation policy. The project will be realized by the IRL2021 HealthDEEP (@tbl-persons).
+
+| Partner | Name | Current position | Role & responsibilities |
+|:-----------------|:-----------------|:-----------------|:-----------------|
+| HealthDEEP CNRS | Serge Morand | DRCE CNRS | Coordinator, WP4 (data), WP5 (national, policy) |
+| HealthDEEP KU | Anamika Kritiyakan | Assistant Professor | WP0 (Animal ethics), WP3 (zoonotic diseases) |
+| HealthDEEP KU | Areeya Kriengudom | Management Assistant TICA | WP0 (Ethics, permits, protocols), WP4 (data), WP5 (local) |
+| HealthDEEP KU | Piyapoom Chongchimpree | Field Assistant | WP2 (rewilding assessment), WP4 (data), WP5 (local) |
+| HealthDEEP KU | Inpreeya Choknakhawaro | Field Assistant | WP1 (commmunity engagement, participatory methods) |
+| HealthDEEP KU | Chayanan Arahmkong | Master student | WP3 (zoonotic diseases) |
+| HealthDEEP KU |  | Master students | WP2 (reforestation assessment) |
+| HealthDEEP MU | Kittipong Chaisiri | Assistant Professor | WP0 (Human ethics), WP4 (data), WP3 (zoonotic diseases) |
+| HealthDEEP MU | Kraichat Tantrakarnapa | Associated Professor | WP5 (national, policy) |
+
+: Summary table of persons involved in the project (members of IRL 2021 HealthDEEP) {#tbl-persons}
+
+## Research Objectives
+
+The two main objectives of rewild4Health are:
+
+\(1\) to assess the contribution of community reforestation to biodiversity through rewilding;
+
+\(2\) to demonstrate that reforestation and rewilding are effective solutions to reduce the risk of transmission of zoonotic diseases in a One Health approach.
+
+The project rewild4Health is based on our previous research activities in Nan province (Thailand) @thinphovong2024protocol @thinphovong2023protected @chaisiri2023social.
+
+## Summary
+
+The three main research hypotheses of rewild4Health are:
+
+\(1\) the effectiveness of community reforestation on biodiversity depends on the structure of community forests as well as community governance rules;
+
+\(2\) rewilding contributes to the regulation of disease transmission with predators and specialist species capable of regulating synanthropic reservoir species;
+
+\(3\) cross-sector collaboration (public health, animal health, conservation) and community engagement are key factors for ecological restoration and disease risk reduction through a One Health approach.
+
+Flowchart of main activities of rewild4Health: land use and participatory mapping (WP1), reforestation assessment (WP2), rewilding assessment with camera traps and sound recorders (WP2), and zoonotic risk assessment (small mammals, dogs, mosquitoes) (WP3) (@fig-wp).
+
+![Workpackages of rewild4Health](workpackages.png){#fig-wp .center width="60%"}
+
+# Data Management Plan
+
+## Data Collection
+
+The framework of rewild4Health (@fig-framework) illustrates the data that are collected remotely, on the ground using different types of sensors, in the laboratory for the biological samples, and by participatory methods and interviews.
+
+![Simplified and illustrated framework of the project rewild4Health](framework.png){#fig-framework .center fig-align="center" width="80%"}
+
+### Types of Data
+
+A wide diversity of data are collected by rewild4Health (@tbl-datatypes).
+
+| Type of data | Collection method | File format |
+|:-----------------------|:-----------------------|:-----------------------|
+| Land use | remote sensing | TIFF, shp |
+| Livestok | existing data | TIFF |
+| Conservation area | Dpt Royal Forestry, DNP | shp |
+| LiDAR | drone | LAS (LASer) |
+| Participatory mapping | focus group | shapefile |
+| Interviews and surveys | interviews, questionnaires | text, spreadsheet, csv, RData |
+| Camera traps | camera trap | image (jpg,heic), video (mov) |
+| Sound | sound recorder | wav, mp3 |
+| Wildlife | living cage trap, harp trap | spreadsheet, csv, RData |
+| Biodiversity | IUCN, gbif, iNaturalist | shp, csv |
+| Birds | listening stations | wav, spreadsheet, csv, RData |
+| Dogs | gps collar | spreadsheet, csv, RData |
+| Mosquitoes | light trap | spreadsheet, csv, RData |
+| Forest assessment | transect | spreadsheet, csv, RData |
+| Soil assessment | soilBON inititative | spreadsheet, csv, RData |
+| Diseases | passive surveillance DDC MoPH | spreadsheet, csv, RData |
+| Pathogens and parasites | molecular and serology screening | spreadsheet, csv, RData |
+
+: Summary table of the types of data collected by the project rewil4health) {#tbl-datatypes}
+
+### Data sources
+
+The sources of open databases are given in @tbl-datasources.
+
+| Type of data | Source | Registration / API |
+|:-----------------------|:-----------------------|:-----------------------|
+| Biodiversity | <a href="https://www.gbif.org"target="_blank">GBIF</a> | yes |
+|  | <a href="https://www.inaturalist.org"target="_blank">iNaturalist</a> | yes |
+|  | <a href="https://www.iucnredlist.org"target="_blank">IUCN</a> | yes |
+|  | <a href="https://healthdeep.shinyapps.io/Small_mammals_CERoPath/"target="_blank">CERoPath</a> | no |
+| Land use | <a href="https://dataverse.ird.fr/dataset.xhtml?persistentId=doi:10.23708/GENR6J"target="_blank">DataSud</a> | no |
+| Livestock | <a href="https://data.apps.fao.org/catalog//iso/9d1e149b-d63f-4213-978b-317a8eb42d02"target="_blank">FAO</a> | no |
+
+: Date collected from open databases {#tbl-datasources}
+
+------------------------------------------------------------------------
+
+## Data organization
+
+### Creators
+
+-   **Identification of creators**
+
+```{r codebook0, echo=FALSE}
+#| label: tbl-creators
+#| 
+# tbl-cap: "Codebook for small mammal trapping: 0 - creators"
+
+creator_file <- read.csv("/Users/serge/Documents/RQuarto/dataspice_rewild4Health/data/metadata/creators.csv")
+
+# Print the codebook table using knitr::kable()
+#knitr::kable(creator_file, format = "latex") |>
+#  kableExtra::kable_styling(font_size = 14, full_width = FALSE)
+
+#gt(creator_file) |>
+#  opt_table_lines() |>
+#  tab_options(
+#    table.background.color = "white",
+#    column_labels.background.color = "white",
+#    heading.background.color = "white",
+#    table.font.size = px(14) 
+#  )
+
+if (knitr::is_latex_output()) {
+  knitr::kable(
+    creator_file,
+    caption = "Codebook for small mammal trapping: 0 - creators",
+    booktabs = TRUE
+  )
+} else {
+  gt(creator_file) |>
+    tab_options(table.font.size = px(14))
+}
+
+```
+
+### File Naming Conventions
+
+-   **Small mammals**
+
+Small mammals are defined as non-flying mammals of Rodentia, Eulipotyphla and Scandatia (with body weight less than 1000 g).
+
+Small mammals are trapped using live Live-traps, locally made, or commercial live-traps, such as sherman. Trapped animals are manipulated, sampled and released according to ethical approvement procedures.
+
+Microchip (Passive Integrated Transponder: PIT Tag) is injected subcutaneously for individual identification during capture-mark-recapture session.
+
+### Datasets and metadata
+
+Three datasets are created:
+
+(i) *Data of sensors (traps)*
+
+```{r codebook n1, echo=FALSE}
+#| label: tbl-sensors
+#| 
+# tbl-cap: "Codebook for small mammal trapping: 1 - sensors (traps)"
+
+attributes_file <- read.csv("/Users/serge/Documents/RQuarto/dataspice_rewild4Health/data/metadata/attributes.csv") |>
+  dplyr::filter(fileName == "traps.csv") |>
+  dplyr::select(-fileName) |>
+  dplyr::rename(dataType = unitText)  |>
+  dplyr::rename(Description = description)  |>
+  dplyr::rename(Variable = variableName)
+
+
+if (knitr::is_latex_output()) {
+  knitr::kable(
+    attributes_file,
+    caption = "Codebook for small mammal trapping: 1 - sensors (traps)",
+    booktabs = TRUE
+  )
+} else {
+  gt(attributes_file) |>
+    tab_options(table.font.size = px(14))
+}
+
+```
+
+(ii) *Data trapping location*
+
+```{r codebook n2, echo=FALSE}
+#| label: tbl-location
+# tbl-cap: "Codebook for small mammal trapping: 2 - location"
+
+attributes_file <- read.csv("/Users/serge/Documents/RQuarto/dataspice_rewild4Health/data/metadata/attributes.csv") |>
+  dplyr::filter(fileName == "location.csv") |>
+  dplyr::select(-fileName) |>
+  dplyr::rename(dataType = unitText)  |>
+  dplyr::rename(Description = description)  |>
+  dplyr::rename(Variable = variableName)
+
+
+
+if (knitr::is_latex_output()) {
+  knitr::kable(
+    attributes_file,
+    caption = "Codebook for small mammal trapping: 2 - location",
+    booktabs = TRUE
+  )
+} else {
+  gt(attributes_file) |>
+    tab_options(table.font.size = px(14))
+}
+```
+
+(iii) *Data small mammal individuals*
+
+```{r codebook n3, echo=FALSE}
+#| label: tbl-individuals
+# tbl-cap: "Codebook for small mammal trapping: 3 - individuals"
+
+attributes_file <- read.csv("/Users/serge/Documents/RQuarto/dataspice_rewild4Health/data/metadata/attributes.csv") |>
+  dplyr::filter(fileName == "individuals.csv") |>
+  dplyr::select(-fileName) |>
+  dplyr::rename(dataType = unitText)  |>
+  dplyr::rename(Description = description)  |>
+  dplyr::rename(Variable = variableName)
+
+# Print the codebook table using knitr::kable()
+#knitr::kable(attributes_file, format = "latex")|>
+#  kableExtra::kable_styling(font_size = 14, full_width = FALSE)
+
+#gt(attributes_file) |>
+#  opt_table_lines() |>
+#  tab_options(
+#    table.background.color = "white",
+#    column_labels.background.color = "white",
+#    heading.background.color = "white",
+#    table.font.size = px(14) 
+#  )
+
+
+if (knitr::is_latex_output()) {
+  knitr::kable(
+    attributes_file,
+    caption = "Codebook for small mammal trapping: 3 - individuals",
+    booktabs = TRUE
+  )
+} else {
+  gt(creator_file) |>
+    tab_options(table.font.size = px(14)) |>
+    gt::tab_caption("Codebook for small mammal trapping: 2 - locations") |>
+    gt::fmt_markdown(columns = everything()) 
+    
+}
+```
+
+### Folder Structure
+
+**folder hierarchy with organizing data using dataspice** Below is the contents of directories in a tree-like format
+
+```{r folder, echo=FALSE}
+library(fs)
+tree <- dir_tree(path  = "./dataspice_rewild4Health/", recurse = TRUE)
+cat(paste0(tree, collapse = "\n"))
+
+```
+
+------------------------------------------------------------------------
+
+### Data Storage and Backup
+
+**Storage Locations**
+
+External hard drive dropbox mycore CNRS
+
+**Backup Strategy**
+
+Following any modification of a datafile:
+
+1\. modify date in the name (e.g. data_name_yearmonthday)
+
+2\. save the file in the dedicated hard drive and on mycore CNRS
+
+------------------------------------------------------------------------
+
+### Data Documentation
+
+[Dataspice R package](https://cran.r-project.org/web/packages/dataspice/vignettes/overview.html) is used to create basic, lightweight, and concise metadata files. The basic files created include a README webpage.
+
+The dataspice metadata fields are based on [Schema.org](https://schema.org/) and and other, richer metadata standards such as [Ecological Metadata Language](https://eml.ecoinformatics.org/).
+
+**README metadata file obtained using dataspice**
+
+<!--  servr::httd("/Users/serge/Documents/R Quarto/dataspice_rewild4Health/docs/")  -->
+
+[see the README metadata file](https://www.dropbox.com/scl/fi/wg7wtm3qwb35s0wbj6pch/dataspice.html?rlkey=9faqdcda57a6znr1llt3nyr6e&st=pqzjvl8x&dl=0){target="_blank"}
+
+------------------------------------------------------------------------
+
+## Data Sharing and Access
+
+### Sharing Platforms
+
+| Resource | Data type | Links |
+|------------------------|------------------------|------------------------|
+| DataSud (IRD) | land Use (with DOI) | <a href="https://dataverse.ird.fr/dataset.xhtml?persistentId=doi:10.23708/GENR6J"target="_blank">Exemple of DataSud</a> |
+| RPubs | R codes | <a href="https://rpubs.com/HealthDEEP"target="_blank">HealthDEEP RPubs</a> |
+| GitHub | data and R codes (DOI can be obtained by transfer to Zenodo) | <a href="https://github.com/HealthDEEP"target="_blank">HealthDEEP GitHub</a> |
+| Shinyapps.io | data representation and data sharing | <a href="https://healthdeep.shinyapps.io/Small_mammals_CERoPath/"target="_blank"> CERoPath at shinyapps.io</a> |
+| Zenodo | data and R codes (with DOI) | <a href="https://zenodo.org/communities/healthdeep/records?q=&l=list&p=1&s=10&sort=newest/"target="_blank"> HealthDEEP at zenodo</a> |
+| genbank | genetic sequences | <a href="https://www.ncbi.nlm.nih.gov/genbank/"target="_blank"> genbank</a> |
+| wildlifeinsights | camera traps | <a href="https://app.wildlifeinsights.org/manage/organizations/2004237/details"target="_blank"> HealthDEEP at wildlifeinsights</a> |
+
+### Licensing
+
+-   licensing terms for the data: BY 4.0
+
+### Access Restrictions
+
+-   camera traps: pictures and accurate location accessible only on request from researchers (wildlifeinsights)
+-   interviews: audio records confidential and deleted after transcription and anonymisation
+-   human health: only aggregated data accessible
+
+------------------------------------------------------------------------
+
+## Ethical and Legal Considerations
+
+The principles of ethics and responsibility require local community and stakeholder engagement, such as in the Primary Health Care Unit, the District Public Health Office, and Nanthaburi National Park. Several meetings with all stakeholders helped to co-construct the project which made it possible to meet the objectives of human health, animal health, and biodiversity conservation.
+
+### Informed Consent
+
+Procedures for human health investigation, laboratory investigation, interviews, and questionnaires will be sent for approval by the ethical committee of the Nan Provincial Public Health Office, Ministry of Public Health, Thailand. All participants who agree to join the study will be asked to read the Participant Information Form, which explains the objectives, procedures, possible risks, and benefits of the research project.
+
+All data wil be anonymized to protect participant privacy
+
+### Animal ethics and compliance
+
+Procedures for collection of samples from domestic animals and wildlife, laboratory investigation, safety procedures, interviews and questionnaires of domestic animals owners will be sent for approval by the Institutional Animal Care and Use Committee, Kasetsart University. Rodent and other wildlife species that will be investigated by rewild4Health will be neither on the CITES list nor on the Red List (IUCN). Animals will be treated in accordance with the guidelines of the American Society of Mammalogists, and within the European Union legislation guidelines (Directive 86/609/EEC). Any trapped rodent species listed on CITES will be released without being manipulated. All animals will be released after sampling.
+
+Approval notices for trapping and investigation of bats and rodents will be sent for approval by the Institutional Animal Care and Use Committee, Kasetsart University.
+
+### Permit and compliance
+
+Permit has to be approved by the Department of National Parks, Wildlife and Plant Conservation (DNP) and the Royal Forest Department, Ministry of Natural Resources and Environment, Thailand. In addition, foreign researchers participating in the research project have also o be approved by the National Research Council of Thailand (NRCT) with the consent of the DNP.
+
+------------------------------------------------------------------------
+
+## Project Timeline
+
+### Milestones
+
+| Milestone       | Expected Date | Description                      |
+|-----------------|---------------|----------------------------------|
+| Starting date   | 2024-10-01    | Starting date of the project     |
+| DMP             | 2025-07-01    | Data management plan written     |
+| Protocols       | 2025-08-01    | Protocols written and published  |
+| Data Collection | 2026-12-31    | Complete data collection phase   |
+| Data Cleaning   | 2026-12-31    | Finalize data pre-processing     |
+| Reporting       | 2027-04-31    | Prepare final report             |
+| End date        | 2027-04-30    | Official end date of the project |
+
+------------------------------------------------------------------------
+
+## Contact Information
+
+contact details for project-related inquiries: serge.morand\[at\]cnrs.fr
+
+# References
+
+::: {#refs}
+:::
+
+# Appendices
+
+## Useful Links
+
+<a href="https://www.go-fair.org/fair-principles/"target="_blank"> FAIR principles</a>
